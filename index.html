@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pretty Muse Salon | Healthy Hair, Beautiful You</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf7;
+            color: #352b2b;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #f4dfe3;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 2px solid #d5a6ad;
+        }
+
+        .logo {
+            color: #7e3f50;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo small {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #352b2b;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #a34f68;
+        }
+
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            padding: 65px 8%;
+            background: linear-gradient(120deg, #fff4f1, #f5dfe3);
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .eyebrow {
+            color: #9b5368;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.15;
+            margin: 18px 0;
+            color: #643746;
+        }
+
+        .hero-text p {
+            max-width: 480px;
+            margin-bottom: 25px;
+            color: #594a4a;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #87485b;
+            color: white;
+            padding: 13px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #633344;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 480px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 150px 150px 12px 12px;
+            box-shadow: 12px 12px 0 #d7a8b2;
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #713e4e;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #746666;
+        }
+
+        .services {
+            background-color: #fffaf7;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px #00000010;
+            border: 1px solid #f0dfe1;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 235px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-info {
+            padding: 23px;
+        }
+
+        .service-info h3 {
+            color: #82475a;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .service-info p {
+            color: #665959;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .text-link {
+            color: #914c63;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .about {
+            background-color: #f6e6e7;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #713e4e;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .value-box {
+            background-color: #fffaf7;
+            padding: 25px 15px;
+            border-radius: 10px;
+        }
+
+        .value-box span {
+            font-size: 28px;
+        }
+
+        .value-box h3 {
+            color: #82475a;
+            margin: 10px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .booking {
+            background-color: #f6e6e7;
+        }
+
+        .booking-container {
+            max-width: 650px;
+            margin: auto;
+            background-color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #00000010;
+        }
+
+        .booking-container label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .booking-container input,
+        .booking-container select,
+        .booking-container textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddc6ca;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            background-color: #fffdfc;
+        }
+
+        .booking-container textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .booking-container .button {
+            margin-top: 20px;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        .notice {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #746666;
+        }
+
+        .contact {
+            text-align: center;
+            background-color: #fffaf7;
+        }
+
+        .contact h2 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            color: #713e4e;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        footer {
+            background-color: #633746;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            section {
+                padding: 55px 6%;
+            }
+
+            .service-grid,
+            .gallery-grid,
+            .values {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image img {
+                height: 300px;
+            }
+
+            .section-heading h2,
+            .about-content h2,
+            .contact h2 {
+                font-size: 30px;
+            }
+
+            .booking-container {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            ♕ Pretty Muse
+            <small>S A L O N</small>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#booking">Book Now</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+                <span class="eyebrow">Your beauty, our passion</span>
+
+                <h1>Little Details.<br>Beautiful Results.</h1>
+
+                <p>
+                    Welcome to Pretty Muse Salon, a beauty space dedicated
+                    to beautiful nails, thoughtful care and a relaxing
+                    salon experience.
+                </p>
+
+                <a href="#services" class="button">Explore Our Services</a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                    alt="Nail care and manicure inspiration">
+            </div>
+
+        </section>
+
+
+        <section class="services" id="services">
+
+            <div class="section-heading">
+                <span class="eyebrow">Care made beautiful</span>
+                <h2>Our Services</h2>
+                <p>Simple self-care, beautiful finishing touches.</p>
+            </div>
+
+            <div class="service-grid">
+
+                <article class="service-card">
+                    <img
+                        src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Manicure and hand nail care">
+
+                    <div class="service-info">
+                        <h3>Manicure</h3>
+                        <p>
+                            Give your hands some attention with nail shaping,
+                            cuticle care and a neat finish.
+                        </p>
+                        <a class="text-link" href="#booking">
+                            Enquire about manicures →
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="service-card">
+                    <img
+                        src="https://images.pexels.com/photos/34930117/pexels-photo-34930117.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Pedicure treatment at a salon">
+
+                    <div class="service-info">
+                        <h3>Pedicure</h3>
+                        <p>
+                            Enjoy foot and toenail care designed to leave
+                            your feet feeling refreshed and well-groomed.
+                        </p>
+                        <a class="text-link" href="#booking">
+                            Enquire about pedicures →
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="service-card">
+                    <img
+                        src="https://images.pexels.com/photos/939836/pexels-photo-939836.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Nail polish and nail art inspiration">
+
+                    <div class="service-info">
+                        <h3>Nail Polish & Design</h3>
+                        <p>
+                            Explore lovely colours and nail designs to
+                            express your personal style.
+                        </p>
+                        <a class="text-link" href="#booking">
+                            Ask about nail designs →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="about" id="about">
+
+            <div class="about-content">
+                <span class="eyebrow">The Pretty Muse touch</span>
+
+                <h2>Beauty Begins With Care</h2>
+
+                <p>
+                    Pretty Muse Salon is a growing beauty brand focused
+                    on manicure and pedicure services. Our goal is to make
+                    personal care feel welcoming, enjoyable and special.
+                </p>
+
+                <p>
+                    We believe that good service begins with listening to
+                    each client, maintaining cleanliness and paying
+                    attention to the little details.
+                </p>
+
+                <div class="values">
+
+                    <div class="value-box">
+                        <span>♡</span>
+                        <h3>Personal Care</h3>
+                        <p>Attention to each client's preferences.</p>
+                    </div>
+
+                    <div class="value-box">
+                        <span>✧</span>
+                        <h3>Cleanliness</h3>
+                        <p>Careful hygiene and clean tools.</p>
+                    </div>
+
+                    <div class="value-box">
+                        <span>❀</span>
+                        <h3>Beautiful Details</h3>
+                        <p>Neat finishes and thoughtful service.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="gallery">
+
+            <div class="section-heading">
+                <span class="eyebrow">A little inspiration</span>
+                <h2>Our Beauty Gallery</h2>
+                <p>
+                    Nail-care inspiration for your next appointment.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <img
+                    src="https://images.pexels.com/photos/3997390/pexels-photo-3997390.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Manicure inspiration">
+
+                <img
+                    src="https://images.pexels.com/photos/939836/pexels-photo-939836.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Nail colour inspiration">
+
+                <img
+                    src="https://images.pexels.com/photos/34930117/pexels-photo-34930117.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Pedicure treatment inspiration">
+
+            </div>
+
+            <p style="text-align:center; margin-top:20px; font-size:12px;">
+                Gallery images are illustrative stock photos, not a claim
+                that these are completed Pretty Muse client appointments.
+            </p>
+
+        </section>
+
+
+        <section class="booking" id="booking">
+
+            <div class="section-heading">
+                <span class="eyebrow">We would love to hear from you</span>
+                <h2>Appointment Enquiry</h2>
+                <p>
+                    Fill in the form to prepare your appointment request.
+                </p>
+            </div>
+
+            <div class="booking-container">
+
+                <form id="bookingForm">
+
+                    <label for="name">Your Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+
+                    <label for="phone">Contact Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your contact number"
+                        required>
+
+                    <label for="service">Choose a Service</label>
+                    <select id="service" required>
+                        <option value="">Select a service</option>
+                        <option>Manicure</option>
+                        <option>Pedicure</option>
+                        <option>Nail Polish & Design</option>
+                        <option>Manicure and Pedicure</option>
+                    </select>
+
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+
+                    <label for="message">Additional Details</label>
+                    <textarea
+                        id="message"
+                        placeholder="Tell us your preferred time or design."></textarea>
+
+                    <button type="submit" class="button">
+                        Prepare My Enquiry
+                    </button>
+
+                    <p class="notice">
+                        This is a demonstration form. It does not send
+                        your details or confirm an appointment yet.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact" id="contact">
+
+            <span class="eyebrow">Let's connect</span>
+            <h2>Contact Pretty Muse</h2>
+
+            <p>
+                Interested in our manicure or pedicure services?
+            </p>
+
+            <p>
+                Use the appointment enquiry form to prepare your request.
+            </p>
+
+            <p>
+                <strong>Business:</strong> Pretty Muse Salon
+            </p>
+
+            <p>
+                <strong>Speciality:</strong> Manicures and Pedicures
+            </p>
+
+            <p>
+                <strong>Location:</strong> Contact us to confirm availability
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>♕ Pretty Muse Salon</p>
+        <p>Healthy Hair • Beautiful You</p>
+        <p>&copy; 2026 Pretty Muse Salon. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        const bookingForm = document.getElementById("bookingForm");
+
+        bookingForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const service = document.getElementById("service").value;
+            const date = document.getElementById("date").value;
+
+            alert(
+                "Thank you, " + name + "!\n\n" +
+                "Your " + service + " enquiry has been prepared.\n" +
+                "Preferred date: " + date + "\n\n" +
+                "This is a demonstration only. No appointment has been sent or confirmed."
+            );
+        });
+    </script>
+
+</body>
+</html>
